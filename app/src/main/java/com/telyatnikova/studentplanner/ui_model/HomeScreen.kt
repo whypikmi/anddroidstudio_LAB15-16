@@ -1,6 +1,5 @@
 package com.telyatnikova.studentplanner.ui_model
 
-import androidx.annotation.experimental.Experimental
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Arrangement
@@ -17,6 +16,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.telyatnikova.studentplanner.data.Subject
 import com.telyatnikova.studentplanner.data.sampleSubjects
+import androidx.compose.material.icons.filled.DateRange
+
 
 @Composable
 fun SubjectCard(
@@ -83,6 +84,7 @@ fun HomeScreen(
     onSubjectClick: (String) -> Unit,
     onProfileClick: () -> Unit,
     onSettingsClick: () -> Unit,
+    onTimingClick: () -> Unit,
     modifier: Modifier = Modifier
 ){
     Scaffold(
@@ -100,6 +102,12 @@ fun HomeScreen(
                         Icon(
                             imageVector = Icons.Default.Settings,
                             contentDescription = "Настройки"
+                        )
+                    }
+                    IconButton(onClick = onTimingClick) {
+                        Icon(
+                            imageVector = Icons.Default.DateRange,
+                            contentDescription = "Расписание"
                         )
                     }
                 }
